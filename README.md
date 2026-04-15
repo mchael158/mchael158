@@ -8,9 +8,6 @@
   <a href="https://github.com/mchael158">
     <img src="https://img.shields.io/badge/GitHub-mchael158-181717?style=for-the-badge&logo=github" />
   </a>
-  <a href="mailto:mchael158@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contato-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
 </p>
 
 ---
@@ -153,7 +150,6 @@ Persistência (PostgreSQL + migrations)
 ## Vamos conectar
 
 - GitHub: [github.com/mchael158](https://github.com/mchael158)
-- E-mail: [mchael158@gmail.com](mailto:mchael158@gmail.com)
 
 ---
 
@@ -161,8 +157,3 @@ Persistência (PostgreSQL + migrations)
 
 > "Software rápido, seguro e escalável não é luxo - é padrão."
 
----
-
-## Contribuições
-
-![snake gif](https://github.com/mchael158/mchael158/blob/output/github-contribution-grid-snake.svg)
