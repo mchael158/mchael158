@@ -1,6 +1,6 @@
 use chrono::Utc;
-use reqwest::blocking::Client;
-use reqwest::header::{ACCEPT, USER_AGENT};
+use reqwest::blocking::{Client, RequestBuilder};
+use reqwest::header::{ACCEPT, AUTHORIZATION, USER_AGENT};
 use serde::Deserialize;
 use std::cmp::Reverse;
 use std::env;
@@ -10,7 +10,6 @@ const README_PATH: &str = "README.md";
 const START_MARKER: &str = "<!-- CRATES-START -->";
 const END_MARKER: &str = "<!-- CRATES-END -->";
 const CRATES_API_BASE: &str = "https://crates.io/api/v1";
-const GITHUB_API_BASE: &str = "https://api.github.com";
 
 #[derive(Debug, Deserialize)]
 struct CratesResponse {
@@ -36,20 +35,15 @@ struct CrateItem {
     documentation: Option<String>,
 }
 
-#[derive(Debug, Clone, Deserialize)]
-struct RepoItem {
-    name: String,
-    html_url: String,
-    #[serde(default)]
-    stargazers_count: u64,
-    #[serde(default)]
-    pushed_at: String,
-    #[serde(default)]
-    description: Option<String>,
-    #[serde(default)]
-    language: Option<String>,
-    #[serde(default)]
-    topics: Vec<String>,
+#[derive(Debug, Deserialize)]
+struct MeResponse {
+    user: MeUser,
+}
+
+#[derive(Debug, Deserialize)]
+struct MeUser {
+    id: u64,
+    login: String,
 }
 
 fn http_client() -> Result<Client, String> {
@@ -58,11 +52,23 @@ fn http_client() -> Result<Client, String> {
         .map_err(|e| format!("falha ao criar cliente HTTP: {e}"))
 }
 
-fn fetch_json<T: for<'de> Deserialize<'de>>(client: &Client, url: &str) -> Result<T, String> {
-    client
-        .get(url)
-        .header(USER_AGENT, "mchael158-profile-readme-updater-rust")
-        .header(ACCEPT, "application/json")
+fn with_default_headers(request: RequestBuilder, token: Option<&str>) -> RequestBuilder {
+    let req = request
+        .header(USER_AGENT, "mchael158-readme-crates-rust")
+        .header(ACCEPT, "application/json");
+    if let Some(value) = token {
+        req.header(AUTHORIZATION, format!("Token {value}"))
+    } else {
+        req
+    }
+}
+
+fn fetch_json<T: for<'de> Deserialize<'de>>(
+    client: &Client,
+    url: &str,
+    token: Option<&str>,
+) -> Result<T, String> {
+    with_default_headers(client.get(url), token)
         .send()
         .and_then(|resp| resp.error_for_status())
         .map_err(|e| format!("erro HTTP em {url}: {e}"))?
@@ -70,7 +76,13 @@ fn fetch_json<T: for<'de> Deserialize<'de>>(client: &Client, url: &str) -> Resul
         .map_err(|e| format!("falha ao parsear JSON de {url}: {e}"))
 }
 
-fn fetch_all_crates(client: &Client, user_id: u64) -> Result<Vec<CrateItem>, String> {
+fn fetch_me(client: &Client, token: &str) -> Result<MeUser, String> {
+    let url = format!("{CRATES_API_BASE}/me");
+    let data: MeResponse = fetch_json(client, &url, Some(token))?;
+    Ok(data.user)
+}
+
+fn fetch_all_crates(client: &Client, user_id: u64, token: Option<&str>) -> Result<Vec<CrateItem>, String> {
     let mut crates: Vec<CrateItem> = Vec::new();
     let mut page = 1usize;
     let per_page = 100usize;
@@ -79,7 +91,7 @@ fn fetch_all_crates(client: &Client, user_id: u64) -> Result<Vec<CrateItem>, Str
         let url = format!(
             "{CRATES_API_BASE}/crates?user_id={user_id}&page={page}&per_page={per_page}"
         );
-        let data: CratesResponse = fetch_json(client, &url)?;
+        let data: CratesResponse = fetch_json(client, &url, token)?;
         let page_items = data.crates;
         let total = data.meta.total.max(crates.len());
         crates.extend(page_items.clone());
@@ -93,110 +105,45 @@ fn fetch_all_crates(client: &Client, user_id: u64) -> Result<Vec<CrateItem>, Str
     Ok(crates)
 }
 
-fn fetch_rust_repositories(client: &Client, username: &str) -> Result<Vec<RepoItem>, String> {
-    let url = format!("{GITHUB_API_BASE}/users/{username}/repos?per_page=100&type=owner&sort=updated");
-    let repos: Vec<RepoItem> = fetch_json(client, &url)?;
-    let mut rust_repos: Vec<RepoItem> = repos
-        .into_iter()
-        .filter(|r| {
-            r.language.as_deref() == Some("Rust")
-                || r.topics.iter().any(|t| t.eq_ignore_ascii_case("rust"))
-        })
-        .collect();
-    rust_repos.sort_by_key(|r| Reverse(r.stargazers_count));
-    rust_repos.truncate(10);
-    Ok(rust_repos)
-}
-
-fn render_crates_block(username: &str, crates: &[CrateItem], has_user_id: bool) -> Vec<String> {
-    let profile_url = format!("https://crates.io/users/{username}");
-    if !has_user_id {
-        return vec![
-            "- Para listar crates publicadas automaticamente, configure `CRATES_IO_USER_ID` no ambiente.".to_string(),
-            format!("- Perfil crates.io (quando existir): [{profile_url}]({profile_url})"),
-        ];
-    }
-
-    let mut lines = vec![
-        format!("- Perfil crates.io: [{profile_url}]({profile_url})"),
-        format!("- Total de crates publicas: **{}**", crates.len()),
-    ];
-
+fn render_crates_icons(crates: &[CrateItem]) -> Vec<String> {
     if crates.is_empty() {
-        lines.push("- Nenhuma crate publica encontrada para o `CRATES_IO_USER_ID` informado.".to_string());
-        return lines;
+        return vec!["<sub>sem crates publicadas encontradas</sub>".to_string()];
     }
 
-    lines.extend([
-        String::new(),
-        "| Crate | Versao | Downloads | Documentacao |".to_string(),
-        "|---|---:|---:|---|".to_string(),
-    ]);
-
-    for crate_item in crates.iter().take(10) {
-        let crate_url = format!("https://crates.io/crates/{}", crate_item.id);
+    let mut lines = vec!["<p align=\"left\">".to_string()];
+    for crate_item in crates.iter().take(8) {
+        let name = &crate_item.id;
+        let crate_url = format!("https://crates.io/crates/{name}");
         let docs_url = crate_item
             .documentation
             .clone()
-            .unwrap_or_else(|| format!("https://docs.rs/{}", crate_item.id));
+            .unwrap_or_else(|| format!("https://docs.rs/{name}"));
+        let version = if crate_item.max_version.is_empty() {
+            "-".to_string()
+        } else {
+            crate_item.max_version.clone()
+        };
         lines.push(format!(
-            "| [{}]({}) | `{}` | **{}** | [docs.rs]({}) |",
-            crate_item.id,
-            crate_url,
-            crate_item.max_version,
-            format_downloads(crate_item.downloads),
-            docs_url
+            "<a href=\"{crate_url}\"><img src=\"https://img.shields.io/badge/{name}-{version}-f74c00?style=flat-square&logo=rust&logoColor=white\" /></a>\
+ <a href=\"{docs_url}\"><img src=\"https://img.shields.io/badge/-docs-2f80ed?style=flat-square&logo=readthedocs&logoColor=white\" /></a>\
+ <img src=\"https://img.shields.io/badge/-{downloads}-222?style=flat-square&logo=download&logoColor=white\" />",
+            downloads = format_downloads(crate_item.downloads)
         ));
     }
-
+    lines.push("</p>".to_string());
     lines
 }
 
-fn render_repos_block(username: &str, repos: &[RepoItem]) -> Vec<String> {
-    let mut lines = vec![format!(
-        "- Repositorios Rust detectados no GitHub: **{}**",
-        repos.len()
-    )];
-
-    if repos.is_empty() {
-        lines.push(format!(
-            "- Nenhum repositorio Rust publico encontrado para [{0}](https://github.com/{0}).",
-            username
-        ));
-        return lines;
-    }
-
-    lines.extend([
-        String::new(),
-        "| Projeto | Stars | Atualizado | Descricao |".to_string(),
-        "|---|---:|---|---|".to_string(),
-    ]);
-
-    for repo in repos {
-        let updated = repo.pushed_at.chars().take(10).collect::<String>();
-        let desc = repo
-            .description
-            .clone()
-            .unwrap_or_else(|| "-".to_string())
-            .replace('|', "\\|");
-        lines.push(format!(
-            "| [{}]({}) | **{}** | `{}` | {} |",
-            repo.name, repo.html_url, repo.stargazers_count, updated, desc
-        ));
-    }
-
-    lines
-}
-
-fn render_section(username: &str, crates: &[CrateItem], repos: &[RepoItem], has_user_id: bool) -> String {
+fn render_section(crates: &[CrateItem], profile_login: &str) -> String {
     let now = Utc::now().format("%Y-%m-%d %H:%M UTC").to_string();
-    let mut lines = vec!["### Crates no crates.io".to_string()];
-    lines.extend(render_crates_block(username, crates, has_user_id));
+    let profile = format!("https://crates.io/users/{profile_login}");
+    let mut lines = vec![
+        format!("<a href=\"{profile}\"><img src=\"https://img.shields.io/badge/-crates.io-151515?style=flat-square&logo=rust&logoColor=white\" /></a>"),
+        String::new(),
+    ];
+    lines.extend(render_crates_icons(crates));
     lines.push(String::new());
-    lines.push("### Projetos Rust no GitHub".to_string());
-    lines.extend(render_repos_block(username, repos));
-    lines.push(String::new());
-    lines.push(format!("- Ultima atualizacao automatica: `{now}`"));
+    lines.push(format!("<sub>{now}</sub>"));
     lines.join("\n")
 }
 
@@ -232,24 +179,34 @@ fn format_downloads(value: u64) -> String {
 }
 
 fn run() -> Result<(), String> {
-    let username = env::var("CRATES_IO_USERNAME")
+    let fallback_login = env::var("CRATES_IO_USERNAME")
         .or_else(|_| env::var("GITHUB_REPOSITORY_OWNER"))
         .unwrap_or_else(|_| "mchael158".to_string());
-    let crates_user_id = env::var("CRATES_IO_USER_ID").ok();
-    let has_user_id = crates_user_id.is_some();
+    let token = env::var("CRATES_IO_TOKEN").ok();
+    let user_id_env = env::var("CRATES_IO_USER_ID").ok();
     let client = http_client()?;
 
-    let crates = if let Some(raw_id) = crates_user_id {
-        let user_id = raw_id
-            .parse::<u64>()
-            .map_err(|e| format!("CRATES_IO_USER_ID invalido: {e}"))?;
-        fetch_all_crates(&client, user_id)?
-    } else {
-        Vec::new()
+    let (user_id, login) = match (user_id_env, token.as_deref()) {
+        (Some(raw_id), _) => {
+            let parsed = raw_id
+                .parse::<u64>()
+                .map_err(|e| format!("CRATES_IO_USER_ID invalido: {e}"))?;
+            (parsed, fallback_login.clone())
+        }
+        (None, Some(tok)) => {
+            let me = fetch_me(&client, tok)?;
+            (me.id, me.login)
+        }
+        (None, None) => {
+            return Err(
+                "defina CRATES_IO_TOKEN (recomendado) ou CRATES_IO_USER_ID para buscar crates"
+                    .to_string(),
+            )
+        }
     };
 
-    let repos = fetch_rust_repositories(&client, &username)?;
-    let section = render_section(&username, &crates, &repos, has_user_id);
+    let crates = fetch_all_crates(&client, user_id, token.as_deref())?;
+    let section = render_section(&crates, &login);
 
     let readme = fs::read_to_string(README_PATH)
         .map_err(|e| format!("falha ao ler {README_PATH}: {e}"))?;

@@ -23,6 +23,14 @@
 
 ---
 
+## Crates
+
+<!-- CRATES-START -->
+<sub>configure e rode o updater Rust para preencher</sub>
+<!-- CRATES-END -->
+
+---
+
 ## Filosofia
 
 > "Software rápido, seguro e escalável não é luxo - é padrão."
