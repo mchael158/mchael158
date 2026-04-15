@@ -24,7 +24,7 @@ name: Setup Rust
       
 name: Update README crates section
       env:
-        CRATES_IO_TOKEN: ${{ secrets.CRATESIIO }}
+        CRATES_IO_TOKEN: ${{ secrets.CRATESIO }}
       run: cargo run --manifest-path ".github/scripts/update-crates-readme/Cargo.toml"
 
       
