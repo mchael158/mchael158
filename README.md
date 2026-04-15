@@ -114,6 +114,26 @@ Persistência (PostgreSQL + migrations)
 
 ---
 
+## Crates Rust publicadas
+
+<!-- CRATES-START -->
+### Crates no crates.io
+- Para listar crates publicadas automaticamente, configure `CRATES_IO_USER_ID` no workflow.
+- Perfil crates.io (quando existir): [https://crates.io/users/mchael158](https://crates.io/users/mchael158)
+
+### Projetos Rust no GitHub
+- Repositórios Rust detectados no GitHub: **2**
+
+| Projeto | Stars | Atualizado | Descrição |
+|---|---:|---|---|
+| [Wive-api-FFFFFFFFF](https://github.com/mchael158/Wive-api-FFFFFFFFF) | **1** | `2025-06-11` | - |
+| [DiscordVIreport](https://github.com/mchael158/DiscordVIreport) | **1** | `2024-10-07` | - |
+
+- Última atualização automática: `2026-04-15 05:36 UTC`
+<!-- CRATES-END -->
+
+---
+
 ## Galeria / previews
 
 > Espaço para screenshots e demonstrações visuais do dashboard.
