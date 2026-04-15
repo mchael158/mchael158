@@ -57,6 +57,78 @@ Atualmente estou aprofundando soluções para produtos SaaS, APIs robustas e aut
 
 ---
 
+## Dashboard do produto
+
+**Módulos principais do dashboard (em evolução):**
+
+- Perfil completo (bio, tags, projetos e eventos).
+- Feed social com posts e interações.
+- Chat entre amigos com foco em experiência em tempo real.
+- Notificações e fluxo de relacionamento (amizades, convites e ações).
+- Personalização visual de perfil (background, avatar, efeitos tipográficos e tema).
+
+**Objetivo do painel:** centralizar gestão de conta, comunicação e identidade visual em uma experiência única.
+
+---
+
+## Suporte a API
+
+**Cobertura funcional da API:**
+
+- Autenticação e sessão de usuário.
+- Perfil público e perfil privado com regras de validação.
+- Sistema de amigos, chat e notificações.
+- Publicações, tags de perfil e recursos de conteúdo.
+- Proteções de rate limit para rotas sensíveis.
+
+**Qualidade técnica:**
+
+- Arquitetura modular para facilitar manutenção.
+- Validações de entrada e tratamento consistente de erros.
+- Estrutura preparada para escalar serviços e domínios.
+
+---
+
+## Imagens e mídia
+
+**Suporte de recursos visuais no ecossistema:**
+
+- Upload e gerenciamento de imagens de perfil/capa.
+- Preview e edição orientada a UI no dashboard.
+- Temas e estilos de apresentação para identidade do usuário.
+- Estrutura pronta para evolução de pipelines de mídia.
+
+---
+
+## Arquitetura resumida
+
+```text
+Frontend (TypeScript/React + UI dashboard)
+        |
+        v
+API Backend (Rust + Axum)
+        |
+        v
+Domínio e serviços (auth, perfil, chat, notificações, posts)
+        |
+        v
+Persistência (PostgreSQL + migrations)
+```
+
+---
+
+## Galeria / previews
+
+> Espaço para screenshots e demonstrações visuais do dashboard.
+> Atualize os links abaixo conforme novas telas forem publicadas.
+
+<p align="center">
+  <img width="46%" src="https://placehold.co/1200x700/0f172a/e2e8f0?text=Dashboard+Preview+1" alt="Dashboard preview 1" />
+  <img width="46%" src="https://placehold.co/1200x700/111827/e5e7eb?text=Dashboard+Preview+2" alt="Dashboard preview 2" />
+</p>
+
+---
+
 ## Estatísticas
 
 <p align="center">
@@ -67,6 +139,14 @@ Atualmente estou aprofundando soluções para produtos SaaS, APIs robustas e aut
 <p align="center">
   <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=compact&langs_count=8&theme=tokyonight"/>
 </p>
+
+---
+
+## Dashboard ao vivo e métricas
+
+- Perfil principal: [github.com/mchael158](https://github.com/mchael158)
+- Repositório do perfil: [github.com/mchael158/mchael158](https://github.com/mchael158/mchael158)
+- Atividade: contribuições e streak atualizadas automaticamente pelos cards.
 
 ---
 
