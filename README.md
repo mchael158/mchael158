@@ -120,6 +120,7 @@ Persistência (PostgreSQL + migrations)
 ### Crates no crates.io
 - Para listar crates publicadas automaticamente, configure `CRATES_IO_USER_ID` no workflow.
 - Perfil crates.io (quando existir): [https://crates.io/users/mchael158](https://crates.io/users/mchael158)
+- Atualização manual local: `python .github/scripts/update-crates-readme.py`
 
 ### Projetos Rust no GitHub
 - Repositórios Rust detectados no GitHub: **2**
