@@ -5,9 +5,10 @@
 ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
 ![Tokio](https://img.shields.io/badge/tokio-000000?style=for-the-badge&logo=tokio&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-<img src="https://skillicons.dev/icons?i=rust,ts,js,react,nodejs,postgres,docker,linux,git" alt="Stack" />
+<img src="https://skillicons.dev/icons?i=rust,ts,js,react,nodejs,postgres,redis,docker,linux,git" alt="Stack" />
 
 </div>
 
@@ -27,9 +28,9 @@
 <td>Axum</td>
 </tr>
 <tr>
-<td align="center"><img height="22" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" /></td>
+<td align="center"><img height="22" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" /><img height="22" src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis" /></td>
 <td><strong>Dados</strong></td>
-<td>PostgreSQL, SQLx</td>
+<td>PostgreSQL, SQLx, Redis</td>
 </tr>
 <tr>
 <td align="center"><img height="22" src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" /><img height="22" src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" /><img height="22" src="https://cdn.simpleicons.org/githubactions/2088FF" alt="CI" /></td>
