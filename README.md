@@ -1,122 +1,213 @@
-Building high-performance backend systems with Rust.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=rust,postgres,redis,docker,linux,git,githubactions,typescript,react" />
+</p>
 
-Focused on asynchronous architectures, distributed systems, API platforms, database-intensive workloads, and production-grade infrastructure.
-
----
-
-## Core Expertise
-
-- Rust
-- Tokio
-- Axum
-- SQLx
-- PostgreSQL
-- Redis
-- Docker
-- Linux
+<p align="center">
+  Building reliable backend systems with Rust.
+</p>
 
 ---
 
-## Engineering Areas
+## About
 
-### Backend Systems
+I focus on designing and implementing high-performance backend services, asynchronous applications, and scalable platform architectures.
+
+My work is primarily centered around the Rust ecosystem, with emphasis on correctness, maintainability, observability, and long-term scalability.
+
+---
+
+## Technical Focus
+
+<table>
+<tr>
+<td width="50%">
+
+### Backend Engineering
 
 - REST APIs
-- Service-Oriented Architecture
-- Event-Driven Systems
-- Background Workers
-- Queue Processing
+- Service-Oriented Architectures
 - Authentication & Authorization
-- Real-Time Communication
+- Real-Time Applications
+- Background Processing
+- Event-Driven Systems
 
-### Data Layer
-
-- PostgreSQL
-- Query Optimization
-- Database Migrations
-- Connection Pooling
-- Redis Caching
-- Data Modeling
+</td>
+<td width="50%">
 
 ### Infrastructure
 
 - Docker
 - Linux
 - CI/CD Pipelines
-- Reverse Proxy Configuration
-- Observability
+- Reverse Proxies
 - Production Deployments
+- Monitoring & Logging
 
-### Performance
-
-- Async Runtime Optimization
-- Memory Efficiency
-- Low-Latency APIs
-- Concurrent Processing
-- Throughput-Oriented Design
+</td>
+</tr>
+</table>
 
 ---
 
 ## Rust Ecosystem
 
-| Area | Technologies |
-|--------|--------|
-| Runtime | Tokio |
-| Web | Axum, Hyper |
-| Database | SQLx, PostgreSQL |
-| Serialization | Serde |
-| Authentication | JWT, OAuth2 |
-| Caching | Redis |
-| Observability | Tracing |
-| Configuration | dotenv, config |
-| Testing | cargo test, integration tests |
-| Deployment | Docker, Linux |
+<table>
+<tr>
+<td align="center">
+<img height="28" src="https://cdn.simpleicons.org/rust/DEA584">
+<br>
+<b>Runtime</b>
+</td>
+<td>
+
+Tokio • Async Rust • Concurrency • Memory Safety
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img height="28" src="https://cdn.simpleicons.org/fastapi/009688">
+<br>
+<b>Web</b>
+</td>
+<td>
+
+Axum • Hyper • REST APIs • Middleware
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img height="28" src="https://cdn.simpleicons.org/postgresql/4169E1">
+<br>
+<b>Database</b>
+</td>
+<td>
+
+PostgreSQL • SQLx • Query Optimization • Migrations
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img height="28" src="https://cdn.simpleicons.org/redis/DC382D">
+<br>
+<b>Caching</b>
+</td>
+<td>
+
+Redis • Session Storage • Rate Limiting • Caching
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img height="28" src="https://cdn.simpleicons.org/docker/2496ED">
+<br>
+<b>Deployment</b>
+</td>
+<td>
+
+Docker • Linux • GitHub Actions • Production Environments
+
+</td>
+</tr>
+
+</table>
 
 ---
 
-## Current Focus
+## Engineering Principles
 
-- Production-grade backend services
-- Scalable API architectures
-- PostgreSQL performance optimization
-- Distributed systems patterns
-- High-concurrency Rust applications
+<table>
+<tr>
+<td>
+
+<img height="18" src="https://cdn.simpleicons.org/rust/DEA584">
+
+**Performance Through Design**
+
+Systems should scale because they are designed correctly, not because more resources are added.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img height="18" src="https://cdn.simpleicons.org/postgresql/4169E1">
+
+**Data First**
+
+A well-designed data layer is the foundation of every reliable application.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img height="18" src="https://cdn.simpleicons.org/docker/2496ED">
+
+**Production Ready**
+
+Code should be observable, maintainable, and deployable from day one.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img height="18" src="https://cdn.simpleicons.org/linux/FCC624">
+
+**Operational Simplicity**
+
+Simple systems survive growth better than complex systems.
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Open Source
+## Technologies
 
-Most public repositories are experiments, libraries, infrastructure tooling, and backend-focused applications built around the Rust ecosystem.
+<p>
 
-<div align="center">
-
-<img
-  height="230"
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=compact&theme=github_dark&hide_border=true"
-/>
-
-</div>
-
----
-
-## Principles
-
-- Correctness before complexity
-- Explicit over implicit
-- Performance through design
-- Reliability as a feature
-- Maintainability over shortcuts
-
----
-
-## Stack
-
-<p align="left">
-
-<img src="https://skillicons.dev/icons?i=rust,postgres,redis,docker,linux,git,githubactions,react,typescript" />
+<img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white">
+<img src="https://img.shields.io/badge/Tokio-000000?style=flat-square">
+<img src="https://img.shields.io/badge/Axum-111111?style=flat-square">
+<img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white">
+<img src="https://img.shields.io/badge/SQLx-316192?style=flat-square">
+<img src="https://img.shields.io/badge/Redis-DD0031?style=flat-square&logo=redis&logoColor=white">
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black">
 
 </p>
 
 ---
 
-> Designing systems that remain simple under growth.
+## Open Source Activity
+
+<p align="center">
+
+<img
+  height="180"
+  src="https://github-readme-stats.vercel.app/api?username=mchael158&show_icons=true&theme=github_dark&hide_border=true"
+/>
+
+<img
+  height="180"
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=compact&theme=github_dark&hide_border=true"
+/>
+
+</p>
+
+---
+
+> Building systems that remain predictable under load.
