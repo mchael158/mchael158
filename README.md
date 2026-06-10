@@ -1,65 +1,122 @@
-# mchael158
+Building high-performance backend systems with Rust.
 
-<div align="center">
-
-![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
-![Tokio](https://img.shields.io/badge/tokio-000000?style=for-the-badge&logo=tokio&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-
-<img src="https://skillicons.dev/icons?i=rust,react,nodejs,postgres,redis,docker,linux,git" alt="Stack" />
-
-</div>
-
-<br />
-
-## Stack
-
-<table>
-<tr>
-<td align="center" width="52"><img height="22" src="https://cdn.simpleicons.org/rust/DEA584" alt="Rust" /><img height="22" src="https://cdn.simpleicons.org/tokio/000000" alt="Tokio" /></td>
-<td><strong>Runtime</strong></td>
-<td>Rust, Tokio</td>
-</tr>
-<tr>
-<td align="center"><img height="22" src="https://cdn.simpleicons.org/hyper/FF6900" alt="HTTP" /></td>
-<td><strong>HTTP / API</strong></td>
-<td>Axum</td>
-</tr>
-<tr>
-<td align="center"><img height="22" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" /><img height="22" src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis" /></td>
-<td><strong>Dados</strong></td>
-<td>PostgreSQL, SQLx, Redis</td>
-</tr>
-<tr>
-<td align="center"><img height="22" src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" /><img height="22" src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" /><img height="22" src="https://cdn.simpleicons.org/githubactions/2088FF" alt="CI" /></td>
-<td><strong>Entrega</strong></td>
-<td>Docker, Linux, CI/CD</td>
-</tr>
-<tr>
-<td align="center"><img height="22" src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" /><img height="22" src="https://cdn.simpleicons.org/react/61DAFB" alt="React" /></td>
-<td><strong>UI</strong></td>
-<td>TypeScript, React</td>
-</tr>
-</table>
+Focused on asynchronous architectures, distributed systems, API platforms, database-intensive workloads, and production-grade infrastructure.
 
 ---
 
-## Rust · repositórios públicos
+## Core Expertise
+
+- Rust
+- Tokio
+- Axum
+- SQLx
+- PostgreSQL
+- Redis
+- Docker
+- Linux
+
+---
+
+## Engineering Areas
+
+### Backend Systems
+
+- REST APIs
+- Service-Oriented Architecture
+- Event-Driven Systems
+- Background Workers
+- Queue Processing
+- Authentication & Authorization
+- Real-Time Communication
+
+### Data Layer
+
+- PostgreSQL
+- Query Optimization
+- Database Migrations
+- Connection Pooling
+- Redis Caching
+- Data Modeling
+
+### Infrastructure
+
+- Docker
+- Linux
+- CI/CD Pipelines
+- Reverse Proxy Configuration
+- Observability
+- Production Deployments
+
+### Performance
+
+- Async Runtime Optimization
+- Memory Efficiency
+- Low-Latency APIs
+- Concurrent Processing
+- Throughput-Oriented Design
+
+---
+
+## Rust Ecosystem
+
+| Area | Technologies |
+|--------|--------|
+| Runtime | Tokio |
+| Web | Axum, Hyper |
+| Database | SQLx, PostgreSQL |
+| Serialization | Serde |
+| Authentication | JWT, OAuth2 |
+| Caching | Redis |
+| Observability | Tracing |
+| Configuration | dotenv, config |
+| Testing | cargo test, integration tests |
+| Deployment | Docker, Linux |
+
+---
+
+## Current Focus
+
+- Production-grade backend services
+- Scalable API architectures
+- PostgreSQL performance optimization
+- Distributed systems patterns
+- High-concurrency Rust applications
+
+---
+
+## Open Source
+
+Most public repositories are experiments, libraries, infrastructure tooling, and backend-focused applications built around the Rust ecosystem.
 
 <div align="center">
 
 <img
-  height="220"
-  alt="Rust — distribuição Linguist"
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=donut&theme=tokyonight&hide_border=true&langs_count=8&title=Rust&hide=javascript,typescript,html,css,scss,shell,powershell,dockerfile,yaml,makefile,batchfile,c,cpp,go,python,java,kotlin,ruby,php,swift,dart,vue,markdown,jupyter%20notebook,haskell,scala,elixir,csharp"
+  height="230"
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=compact&theme=github_dark&hide_border=true"
 />
 
 </div>
 
 ---
 
-## Filosofia
+## Principles
 
-> Software rápido, seguro e escalável não é luxo — é padrão.
+- Correctness before complexity
+- Explicit over implicit
+- Performance through design
+- Reliability as a feature
+- Maintainability over shortcuts
+
+---
+
+## Stack
+
+<p align="left">
+
+<img src="https://skillicons.dev/icons?i=rust,postgres,redis,docker,linux,git,githubactions,react,typescript" />
+
+</p>
+
+---
+
+> Designing systems that remain simple under growth.
