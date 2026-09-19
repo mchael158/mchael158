@@ -37,6 +37,8 @@ struct CrateItem {
     #[serde(default)]
     documentation: Option<String>,
     #[serde(default)]
+    description: Option<String>,
+    #[serde(default)]
     repository: Option<String>,
 }
 
@@ -174,15 +176,27 @@ fn shield_label(value: &str) -> String {
         .replace(' ', "%20")
 }
 
+fn truncate_desc(value: &str, max: usize) -> String {
+    let clean = value.replace('|', "\\|").replace('\n', " ");
+    if clean.chars().count() <= max {
+        return clean;
+    }
+    let mut out: String = clean.chars().take(max.saturating_sub(1)).collect();
+    out.push('…');
+    out
+}
+
 fn render_crates_block(crates: &[CrateItem]) -> Vec<String> {
     if crates.is_empty() {
         return vec!["<sub>no published crates found</sub>".to_string()];
     }
 
     let mut lines = vec![
-        format!("`published crates: {}`", crates.len()),
+        format!(
+            "<img src=\"https://img.shields.io/badge/🦀_published-{count}-f74c00?style=for-the-badge&labelColor=0b0d10&color=f74c00\" alt=\"published crates\" />",
+            count = crates.len()
+        ),
         String::new(),
-        "<p>".to_string(),
     ];
 
     for crate_item in crates.iter().take(8) {
@@ -199,42 +213,41 @@ fn render_crates_block(crates: &[CrateItem]) -> Vec<String> {
         };
         let label = shield_label(name);
         let version_label = shield_label(&version);
+        let downloads = format_downloads(crate_item.downloads);
 
+        lines.push(format!("**🦀 [{name}]({crate_url})**"));
         lines.push(format!(
-            "  <a href=\"{crate_url}\"><img src=\"https://img.shields.io/badge/{label}-{version_label}-f74c00?style=flat-square&logo=rust&logoColor=white\" alt=\"{name}\"></a>\n  <a href=\"{docs_url}\"><img src=\"https://img.shields.io/badge/docs-0b0d10?style=flat-square&logo=readthedocs&logoColor=f74c00\" alt=\"docs\"></a>\n  <img src=\"https://img.shields.io/badge/{downloads}-1a1a1a?style=flat-square&logo=download&logoColor=white\" alt=\"downloads\">",
-            downloads = format_downloads(crate_item.downloads)
+            "<a href=\"{crate_url}\"><img src=\"https://img.shields.io/badge/{label}-{version_label}-f74c00?style=flat-square&logo=rust&logoColor=white\" alt=\"{name}\" /></a> \
+<a href=\"{docs_url}\"><img src=\"https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10\" alt=\"docs\" /></a> \
+<img src=\"https://img.shields.io/badge/⬇_{downloads}-0DB7ED?style=flat-square&labelColor=0b0d10\" alt=\"downloads\" />"
         ));
-    }
 
-    lines.push("</p>".to_string());
-    lines.push(String::new());
-    lines.extend([
-        "| crate | version | downloads | source |".to_string(),
-        "|---|---:|---:|---|".to_string(),
-    ]);
+        if let Some(repo) = crate_item.repository.as_deref() {
+            lines.push(format!(
+                "<a href=\"{repo}\"><img src=\"https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white\" alt=\"source\" /></a>"
+            ));
+        }
 
-    for crate_item in crates.iter().take(10) {
-        let crate_url = format!("https://crates.io/crates/{}", crate_item.id);
-        let repo = crate_item
-            .repository
+        if let Some(desc) = crate_item
+            .description
             .as_deref()
-            .map(|url| format!("[repo]({url})"))
-            .unwrap_or_else(|| "-".to_string());
-        lines.push(format!(
-            "| [{}]({}) | `{}` | **{}** | {} |",
-            crate_item.id,
-            crate_url,
-            crate_item.max_version,
-            format_downloads(crate_item.downloads),
-            repo
-        ));
+            .map(str::trim)
+            .filter(|d| !d.is_empty())
+        {
+            lines.push(format!("<sub>{}</sub>", truncate_desc(desc, 110)));
+        }
+
+        lines.push(String::new());
     }
 
     lines
 }
 
 fn render_repos_block(username: &str, repos: &[RepoItem]) -> Vec<String> {
-    let mut lines = vec![format!("`rust repos: {}`", repos.len())];
+    let mut lines = vec![format!(
+        "<img src=\"https://img.shields.io/badge/🦀_repos-{count}-DEA584?style=for-the-badge&labelColor=0b0d10&color=DEA584\" alt=\"rust repos\" />",
+        count = repos.len()
+    )];
 
     if repos.is_empty() {
         lines.push(format!(
@@ -244,25 +257,38 @@ fn render_repos_block(username: &str, repos: &[RepoItem]) -> Vec<String> {
         return lines;
     }
 
-    lines.extend([
-        String::new(),
-        "| project | stars | updated | notes |".to_string(),
-        "|---|---:|---|---|".to_string(),
-    ]);
+    lines.push(String::new());
+    lines.push("<p>".to_string());
 
     for repo in repos {
         let updated = repo.pushed_at.chars().take(10).collect::<String>();
-        let desc = repo
-            .description
-            .clone()
-            .unwrap_or_else(|| "-".to_string())
-            .replace('|', "\\|");
+        let updated_label = shield_label(&updated);
+        let name_label = shield_label(&repo.name);
+        let lang = repo.language.as_deref().unwrap_or("Rust");
+        let lang_label = shield_label(lang);
+        let stars = repo.stargazers_count;
+
         lines.push(format!(
-            "| [{}]({}) | **{}** | `{}` | {} |",
-            repo.name, repo.html_url, repo.stargazers_count, updated, desc
+            "  <a href=\"{url}\"><img src=\"https://img.shields.io/badge/🦀_{name_label}-{lang_label}-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white\" alt=\"{name}\" /></a> \
+<img src=\"https://img.shields.io/badge/★_{stars}-1a1a1a?style=flat-square\" alt=\"stars\" /> \
+<img src=\"https://img.shields.io/badge/{updated_label}-2088FF?style=flat-square&labelColor=0b0d10\" alt=\"updated\" />",
+            url = repo.html_url,
+            name = repo.name
         ));
+
+        if let Some(desc) = repo
+            .description
+            .as_deref()
+            .map(str::trim)
+            .filter(|d| !d.is_empty())
+        {
+            lines.push(format!("  <br/><sub>{}</sub><br/>", truncate_desc(desc, 100)));
+        } else {
+            lines.push("  <br/>".to_string());
+        }
     }
 
+    lines.push("</p>".to_string());
     lines
 }
 
@@ -271,16 +297,15 @@ fn render_section(login: &str, crates: &[CrateItem], repos: &[RepoItem]) -> Stri
     let profile = format!("https://crates.io/users/{login}");
 
     let mut lines = vec![
-        format!("<a href=\"{profile}\"><img src=\"https://img.shields.io/badge/crates.io-{login}-0b0d10?style=flat-square&logo=rust&logoColor=f74c00\" alt=\"crates.io\"></a>"),
+        format!(
+            "<a href=\"{profile}\"><img src=\"https://img.shields.io/badge/🦀_crates.io-{login}-f74c00?style=for-the-badge&logo=rust&logoColor=white&labelColor=0b0d10\" alt=\"crates.io\" /></a>"
+        ),
         String::new(),
-        "#### published".to_string(),
     ];
     lines.extend(render_crates_block(crates));
-    lines.push(String::new());
-    lines.push("#### repositories".to_string());
     lines.extend(render_repos_block(login, repos));
     lines.push(String::new());
-    lines.push(format!("<sub>auto-synced · {now}</sub>"));
+    lines.push(format!("<sub>🦀 auto-synced · `{now}`</sub>"));
     lines.join("\n")
 }
 
