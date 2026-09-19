@@ -1,10 +1,9 @@
-name: Update crates block
+name: Update crates section
 
 on:
   workflow_dispatch:
   schedule:
-    
-cron: "0 9 * * *"
+    - cron: "0 9 * * *"
 
 permissions:
   contents: write
@@ -13,58 +12,25 @@ jobs:
   update-crates:
     runs-on: ubuntu-latest
     steps:
-      
-name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      
-name: Setup Rust
-      uses: dtolnay/rust-toolchain@stable
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
 
-      
-name: Update README crates section
-      env:
-        CRATES_IO_TOKEN: ${{ secrets.CRATESIO }}
-      run: cargo run --manifest-path ".github/scripts/update-crates-readme/Cargo.toml"
+      - name: Install OpenSSL headers
+        run: sudo apt-get update && sudo apt-get install -y pkg-config libssl-dev
 
-      
-name: Commit changes
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "chore: atualiza bloco de crates no README"
-        file_pattern: README.md
-name: Update crates block
+      - name: Update README crates section
+        env:
+          CRATES_IO_TOKEN: ${{ secrets.CRATESIO }}
+          CRATES_IO_USERNAME: mchael158
+          CRATES_IO_USER_ID: "407044"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cargo run --release --manifest-path ".github/scripts/update-crates-readme/Cargo.toml"
 
-on:
-  workflow_dispatch:
-  schedule:
-    
-cron: "0 9 * * *"
-
-permissions:
-  contents: write
-
-jobs:
-  update-crates:
-    runs-on: ubuntu-latest
-    steps:
-      
-name: Checkout
-      uses: actions/checkout@v4
-
-      
-name: Setup Rust
-      uses: dtolnay/rust-toolchain@stable
-
-      
-name: Update README crates section
-      env:
-        CRATES_IO_TOKEN: ${{ secrets.CRATESIIO }}
-      run: cargo run --manifest-path ".github/scripts/update-crates-readme/Cargo.toml"
-
-      
-name: Commit changes
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "chore: atualiza bloco de crates no README"
-        file_pattern: README.md
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: atualiza bloco de crates no README"
+          file_pattern: README.md

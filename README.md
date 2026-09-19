@@ -1,213 +1,114 @@
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=rust,postgres,redis,docker,linux,git,githubactions,typescript,react" />
+  <img src="https://img.shields.io/badge/mchael158-runtime-0b0d10?style=for-the-badge&labelColor=f74c00&color=0b0d10" alt="mchael158" />
 </p>
 
-<p align="center">
-  Building reliable backend systems with Rust.
-</p>
-
----
-
-## About
-
-I focus on designing and implementing high-performance backend services, asynchronous applications, and scalable platform architectures.
-
-My work is primarily centered around the Rust ecosystem, with emphasis on correctness, maintainability, observability, and long-term scalability.
-
----
-
-## Technical Focus
-
 <table>
 <tr>
-<td width="50%">
+<td width="48%" valign="top">
 
-### Backend Engineering
+### `@mchael158`
 
-- REST APIs
-- Service-Oriented Architectures
-- Authentication & Authorization
-- Real-Time Applications
-- Background Processing
-- Event-Driven Systems
+**Runtime & Protocol Engineer**  
+**Async systems in Rust**
 
-</td>
-<td width="50%">
+Building actor flows, heapless protocols,  
+and backends that stay predictable under load.
 
-### Infrastructure
-
-- Docker
-- Linux
-- CI/CD Pipelines
-- Reverse Proxies
-- Production Deployments
-- Monitoring & Logging
-
-</td>
-</tr>
-</table>
-
----
-
-## Rust Ecosystem
-
-<table>
-<tr>
-<td align="center">
-<img height="28" src="https://cdn.simpleicons.org/rust/DEA584">
-<br>
-<b>Runtime</b>
-</td>
-<td>
-
-Tokio • Async Rust • Concurrency • Memory Safety
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-<img height="28" src="https://cdn.simpleicons.org/fastapi/009688">
-<br>
-<b>Web</b>
-</td>
-<td>
-
-Axum • Hyper • REST APIs • Middleware
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-<img height="28" src="https://cdn.simpleicons.org/postgresql/4169E1">
-<br>
-<b>Database</b>
-</td>
-<td>
-
-PostgreSQL • SQLx • Query Optimization • Migrations
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-<img height="28" src="https://cdn.simpleicons.org/redis/DC382D">
-<br>
-<b>Caching</b>
-</td>
-<td>
-
-Redis • Session Storage • Rate Limiting • Caching
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-<img height="28" src="https://cdn.simpleicons.org/docker/2496ED">
-<br>
-<b>Deployment</b>
-</td>
-<td>
-
-Docker • Linux • GitHub Actions • Production Environments
-
-</td>
-</tr>
-
-</table>
-
----
-
-## Engineering Principles
-
-<table>
-<tr>
-<td>
-
-<img height="18" src="https://cdn.simpleicons.org/rust/DEA584">
-
-**Performance Through Design**
-
-Systems should scale because they are designed correctly, not because more resources are added.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-<img height="18" src="https://cdn.simpleicons.org/postgresql/4169E1">
-
-**Data First**
-
-A well-designed data layer is the foundation of every reliable application.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-<img height="18" src="https://cdn.simpleicons.org/docker/2496ED">
-
-**Production Ready**
-
-Code should be observable, maintainable, and deployable from day one.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-<img height="18" src="https://cdn.simpleicons.org/linux/FCC624">
-
-**Operational Simplicity**
-
-Simple systems survive growth better than complex systems.
-
-</td>
-</tr>
-</table>
-
----
-
-## Technologies
+```text
+latency over luck
+ownership over abstraction
+ship what you can observe
+```
 
 <p>
+  <a href="https://crates.io/users/mchael158"><img src="https://img.shields.io/badge/crates.io-mchael158-f74c00?style=flat-square&logo=rust&logoColor=white" alt="crates.io" /></a>
+  <img src="https://img.shields.io/badge/focus-tokio%20%2B%20axum-1a1a1a?style=flat-square" alt="focus" />
+  <img src="https://img.shields.io/badge/mode-no__std%20aware-222?style=flat-square" alt="mode" />
+</p>
 
-<img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white">
-<img src="https://img.shields.io/badge/Tokio-000000?style=flat-square">
-<img src="https://img.shields.io/badge/Axum-111111?style=flat-square">
-<img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white">
-<img src="https://img.shields.io/badge/SQLx-316192?style=flat-square">
-<img src="https://img.shields.io/badge/Redis-DD0031?style=flat-square&logo=redis&logoColor=white">
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white">
-<img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black">
+</td>
+<td width="52%" valign="top">
 
+```text
+mchael158/
+├─ runtime/
+│  ├── actors.rs          # M:N flows
+│  ├── hop.rs             # message + cap
+│  ├── supervisor.rs      # restart policy
+│  └── tokio.rs           # async core
+├─ wire/
+│  ├── frame.rs           # fixed headers
+│  ├── crc_ack.rs         # integrity
+│  └── psicose.rs         # heapless link
+├─ service/
+│  ├── axum.rs            # http edge
+│  ├── sqlx.rs            # postgres
+│  └── redis.rs           # hot path
+└─ ship/
+   ├── docker
+   ├── linux
+   └── actions.yml
+```
+
+</td>
+</tr>
+</table>
+
+---
+
+### signal
+
+Systems should remain boring in production.  
+Fast paths are designed, not hoped for.  
+If it moves bytes, it owns invariants.
+
+<p>
+  <img src="https://skillicons.dev/icons?i=rust,postgres,redis,docker,linux,git,githubactions" />
 </p>
 
 ---
 
-## Open Source Activity
+### crates & rust surface
+
+<!-- CRATES-START -->
+<a href="https://crates.io/users/mchael158"><img src="https://img.shields.io/badge/crates.io-mchael158-0b0d10?style=flat-square&logo=rust&logoColor=f74c00" alt="crates.io"></a>
+
+#### published
+`published crates: 2`
+
+<p>
+  <a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.5-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors"></a>
+  <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-0b0d10?style=flat-square&logo=readthedocs&logoColor=f74c00" alt="docs"></a>
+  <img src="https://img.shields.io/badge/203-1a1a1a?style=flat-square&logo=download&logoColor=white" alt="downloads">
+  <a href="https://crates.io/crates/psicose"><img src="https://img.shields.io/badge/psicose-0.3.1-f74c00?style=flat-square&logo=rust&logoColor=white" alt="psicose"></a>
+  <a href="https://docs.rs/psicose"><img src="https://img.shields.io/badge/docs-0b0d10?style=flat-square&logo=readthedocs&logoColor=f74c00" alt="docs"></a>
+  <img src="https://img.shields.io/badge/64-1a1a1a?style=flat-square&logo=download&logoColor=white" alt="downloads">
+</p>
+
+| crate | version | downloads | source |
+|---|---:|---:|---|
+| [byteflow-actors](https://crates.io/crates/byteflow-actors) | `0.9.5` | **203** | [repo](https://github.com/mchael158/bytecode-vm) |
+| [psicose](https://crates.io/crates/psicose) | `0.3.1` | **64** | [repo](https://github.com/mchael158/PSICOSE) |
+
+#### repositories
+`rust repos: 3`
+
+| project | stars | updated | notes |
+|---|---:|---|---|
+| [byteflow-actors](https://github.com/mchael158/byteflow-actors) | **0** | `2026-09-18` | - |
+| [PSICOSE](https://github.com/mchael158/PSICOSE) | **0** | `2026-09-12` | - |
+| [Registrator](https://github.com/mchael158/Registrator) | **0** | `2026-08-22` | - |
+
+<sub>auto-synced · 2026-09-19 04:18 UTC</sub>
+<!-- CRATES-END -->
+
+---
 
 <p align="center">
-
-<img
-  height="180"
-  src="https://github-readme-stats.vercel.app/api?username=mchael158&show_icons=true&theme=github_dark&hide_border=true"
-/>
-
-<img
-  height="180"
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=compact&theme=github_dark&hide_border=true"
-/>
-
+  <img height="168" src="https://github-readme-stats.vercel.app/api?username=mchael158&show_icons=true&theme=radical&hide_border=true&bg_color=0b0d10&title_color=f74c00&icon_color=f74c00&text_color=c9c9c9" alt="stats" />
+  <img height="168" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mchael158&layout=compact&theme=radical&hide_border=true&bg_color=0b0d10&title_color=f74c00&text_color=c9c9c9" alt="langs" />
 </p>
 
----
-
-> Building systems that remain predictable under load.
+<p align="center">
+  <sub>predictable under load · owned invariants · rust first</sub>
+</p>
