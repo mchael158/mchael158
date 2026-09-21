@@ -94,12 +94,12 @@ If it moves bytes, it owns invariants.
 <img src="https://img.shields.io/badge/🦀_published-2-f74c00?style=for-the-badge&labelColor=0b0d10&color=f74c00" alt="published crates" />
 
 **🦀 [byteflow-actors](https://crates.io/crates/byteflow-actors)**
-<a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.5-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors" /></a> <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_203-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
+<a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.5-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors" /></a> <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_204-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
 <a href="https://github.com/mchael158/bytecode-vm"><img src="https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white" alt="source" /></a>
 <sub>Embeddable flow runtime: M:N scheduler, Atomic Hop (Message+Cap), supervisor — use byteflow::</sub>
 
 **🦀 [psicose](https://crates.io/crates/psicose)**
-<a href="https://crates.io/crates/psicose"><img src="https://img.shields.io/badge/psicose-0.4.0-f74c00?style=flat-square&logo=rust&logoColor=white" alt="psicose" /></a> <a href="https://docs.rs/psicose"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_71-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
+<a href="https://crates.io/crates/psicose"><img src="https://img.shields.io/badge/psicose-0.4.0-f74c00?style=flat-square&logo=rust&logoColor=white" alt="psicose" /></a> <a href="https://docs.rs/psicose"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_72-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
 <a href="https://github.com/mchael158/PSICOSE"><img src="https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white" alt="source" /></a>
 <sub>no_std heapless reliable link motor: 4-byte frame, ACK/CRC, window N≤8, P2P Node/PeerLink, LinkFace — zero cr…</sub>
 
@@ -114,7 +114,7 @@ If it moves bytes, it owns invariants.
   <br/>
 </p>
 
-<sub>🦀 auto-synced · `2026-09-20 13:28 UTC`</sub>
+<sub>🦀 auto-synced · `2026-09-21 15:41 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
