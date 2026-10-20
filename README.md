@@ -106,7 +106,7 @@ If it moves bytes, it owns invariants.
 <img src="https://img.shields.io/badge/🦀_repos-3-DEA584?style=for-the-badge&labelColor=0b0d10&color=DEA584" alt="rust repos" />
 
 <p>
-  <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--18-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
+  <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--20-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
   <a href="https://github.com/mchael158/PSICOSE"><img src="https://img.shields.io/badge/🦀_PSICOSE-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="PSICOSE" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--10-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
@@ -114,7 +114,7 @@ If it moves bytes, it owns invariants.
   <br/>
 </p>
 
-<sub>🦀 auto-synced · `2026-10-19 16:13 UTC`</sub>
+<sub>🦀 auto-synced · `2026-10-20 14:07 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
