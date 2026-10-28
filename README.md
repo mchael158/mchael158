@@ -94,19 +94,19 @@ If it moves bytes, it owns invariants.
 <img src="https://img.shields.io/badge/🦀_published-2-f74c00?style=for-the-badge&labelColor=0b0d10&color=f74c00" alt="published crates" />
 
 **🦀 [byteflow-actors](https://crates.io/crates/byteflow-actors)**
-<a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.19-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors" /></a> <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_371-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
-<a href="https://github.com/mchael158/bytecode-vm"><img src="https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white" alt="source" /></a>
+<a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.20-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors" /></a> <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_385-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
+<a href="https://github.com/mchael158/byteflow-actors.git"><img src="https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white" alt="source" /></a>
 <sub>Embeddable flow runtime: M:N scheduler, Atomic Hop (Message+Cap), supervisor — use byteflow::</sub>
 
 **🦀 [psicose](https://crates.io/crates/psicose)**
-<a href="https://crates.io/crates/psicose"><img src="https://img.shields.io/badge/psicose-0.4.3-f74c00?style=flat-square&logo=rust&logoColor=white" alt="psicose" /></a> <a href="https://docs.rs/psicose"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_120-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
+<a href="https://crates.io/crates/psicose"><img src="https://img.shields.io/badge/psicose-0.4.3-f74c00?style=flat-square&logo=rust&logoColor=white" alt="psicose" /></a> <a href="https://docs.rs/psicose"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_121-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
 <a href="https://github.com/mchael158/PSICOSE"><img src="https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white" alt="source" /></a>
 <sub>no_std heapless reliable link motor: 4-byte frame, ACK/CRC, window N≤8, P2P Node/PeerLink, LinkFace — zero cr…</sub>
 
 <img src="https://img.shields.io/badge/🦀_repos-5-DEA584?style=for-the-badge&labelColor=0b0d10&color=DEA584" alt="rust repos" />
 
 <p>
-  <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--27-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
+  <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--28-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
   <a href="https://github.com/mchael158/NFC-FIND"><img src="https://img.shields.io/badge/🦀_NFC--FIND-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="NFC-FIND" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--25-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
@@ -118,7 +118,7 @@ If it moves bytes, it owns invariants.
   <br/>
 </p>
 
-<sub>🦀 auto-synced · `2026-10-27 15:09 UTC`</sub>
+<sub>🦀 auto-synced · `2026-10-28 15:44 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
