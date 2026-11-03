@@ -125,7 +125,7 @@ If it moves bytes, it owns invariants.
   <br/>
 </p>
 
-<sub>🦀 auto-synced · `2026-11-02 19:13 UTC`</sub>
+<sub>🦀 auto-synced · `2026-11-03 16:50 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
