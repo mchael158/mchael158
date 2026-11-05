@@ -94,7 +94,7 @@ If it moves bytes, it owns invariants.
 <img src="https://img.shields.io/badge/🦀_published-3-f74c00?style=for-the-badge&labelColor=0b0d10&color=f74c00" alt="published crates" />
 
 **🦀 [byteflow-actors](https://crates.io/crates/byteflow-actors)**
-<a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.21-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors" /></a> <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_416-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
+<a href="https://crates.io/crates/byteflow-actors"><img src="https://img.shields.io/badge/byteflow--actors-0.9.23-f74c00?style=flat-square&logo=rust&logoColor=white" alt="byteflow-actors" /></a> <a href="https://docs.rs/byteflow-actors"><img src="https://img.shields.io/badge/docs-DEA584?style=flat-square&logo=readthedocs&logoColor=0b0d10" alt="docs" /></a> <img src="https://img.shields.io/badge/⬇_437-0DB7ED?style=flat-square&labelColor=0b0d10" alt="downloads" />
 <a href="https://github.com/mchael158/byteflow-actors.git"><img src="https://img.shields.io/badge/source-2088FF?style=flat-square&logo=github&logoColor=white" alt="source" /></a>
 <sub>Embeddable flow runtime: M:N scheduler, Atomic Hop (Message+Cap), supervisor — use byteflow::</sub>
 
@@ -111,7 +111,7 @@ If it moves bytes, it owns invariants.
 <img src="https://img.shields.io/badge/🦀_repos-6-DEA584?style=for-the-badge&labelColor=0b0d10&color=DEA584" alt="rust repos" />
 
 <p>
-  <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--04-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
+  <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--05-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
   <a href="https://github.com/mchael158/byteflow-io"><img src="https://img.shields.io/badge/🦀_byteflow--io-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-io" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--10--31-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/><sub>Host-side I/O integration layer for the Byteflow runtime</sub><br/>
@@ -125,7 +125,7 @@ If it moves bytes, it owns invariants.
   <br/>
 </p>
 
-<sub>🦀 auto-synced · `2026-11-04 16:52 UTC`</sub>
+<sub>🦀 auto-synced · `2026-11-05 17:07 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
