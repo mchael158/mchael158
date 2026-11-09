@@ -111,9 +111,9 @@ If it moves bytes, it owns invariants.
 <img src="https://img.shields.io/badge/🦀_repos-6-DEA584?style=for-the-badge&labelColor=0b0d10&color=DEA584" alt="rust repos" />
 
 <p>
-  <a href="https://github.com/mchael158/byteflow-io"><img src="https://img.shields.io/badge/🦀_byteflow--io-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-io" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--07-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
+  <a href="https://github.com/mchael158/CUDA-G834L8MD0SD0K3"><img src="https://img.shields.io/badge/🦀_CUDA--G834L8MD0SD0K3-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="CUDA-G834L8MD0SD0K3" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--09-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
-  <a href="https://github.com/mchael158/GK8932KF-54K-32"><img src="https://img.shields.io/badge/🦀_GK8932KF--54K--32-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="GK8932KF-54K-32" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--07-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
+  <a href="https://github.com/mchael158/byteflow-io"><img src="https://img.shields.io/badge/🦀_byteflow--io-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-io" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--07-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
   <a href="https://github.com/mchael158/byteflow-actors"><img src="https://img.shields.io/badge/🦀_byteflow--actors-Rust-f74c00?style=flat-square&labelColor=0b0d10&logo=github&logoColor=white" alt="byteflow-actors" /></a> <img src="https://img.shields.io/badge/★_0-1a1a1a?style=flat-square" alt="stars" /> <img src="https://img.shields.io/badge/2026--11--05-2088FF?style=flat-square&labelColor=0b0d10" alt="updated" />
   <br/>
@@ -125,7 +125,7 @@ If it moves bytes, it owns invariants.
   <br/>
 </p>
 
-<sub>🦀 auto-synced · `2026-11-08 15:48 UTC`</sub>
+<sub>🦀 auto-synced · `2026-11-09 19:31 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
