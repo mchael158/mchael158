@@ -74,11 +74,11 @@ async backends, embeddable runtimes, and `no_std` protocols for constrained envi
 
 | Crate | Version | Downloads | Docs |
 |---|---|---:|---|
-| [byteflow-actors](https://crates.io/crates/byteflow-actors) | `0.9.24` | 462 | [docs](https://docs.rs/byteflow-actors) |
-| [psicose](https://crates.io/crates/psicose) | `0.4.3` | 121 | [docs](https://docs.rs/psicose) |
-| [byteflow-io](https://crates.io/crates/byteflow-io) | `0.2.0` | 44 | [docs](https://docs.rs/byteflow-io) |
+| [byteflow-actors](https://crates.io/crates/byteflow-actors) | `0.9.24` | 493 | [docs](https://docs.rs/byteflow-actors) |
+| [psicose](https://crates.io/crates/psicose) | `0.4.3` | 131 | [docs](https://docs.rs/psicose) |
+| [byteflow-io](https://crates.io/crates/byteflow-io) | `0.2.0` | 48 | [docs](https://docs.rs/byteflow-io) |
 
-<sub>Updated `2026-11-14 15:35 UTC`</sub>
+<sub>Updated `2026-11-15 16:06 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
