@@ -78,7 +78,7 @@ async backends, embeddable runtimes, and `no_std` protocols for constrained envi
 | [psicose](https://crates.io/crates/psicose) | `0.4.3` | 131 | [docs](https://docs.rs/psicose) |
 | [byteflow-io](https://crates.io/crates/byteflow-io) | `0.2.0` | 48 | [docs](https://docs.rs/byteflow-io) |
 
-<sub>Updated `2026-11-18 17:48 UTC`</sub>
+<sub>Updated `2026-11-19 17:59 UTC`</sub>
 <!-- CRATES-END -->
 
 ---
